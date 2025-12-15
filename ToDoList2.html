@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+</head>
+<body>
+
+<h2>To Do List</h2>
+
+<input type="text" id="task">
+<button onclick="tambah()">Tambah</button>
+
+<ul id="list"></ul>
+
+<script>
+function tambah() {
+    var task = document.getElementById("task").value;
+    if (task == "") return;
+
+    var li = document.createElement("li");
+    li.innerHTML = task + ' <button onclick="this.parentElement.remove()">Hapus</button>';
+    document.getElementById("list").appendChild(li);
+
+    document.getElementById("task").value = "";
+}
+</script>
+
+</body>
+</html>
